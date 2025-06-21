@@ -10,40 +10,35 @@ import { Textarea } from '@/components/ui/textarea';
 const Index = () => {
   const projects = [
     {
-      title: "AKS Deployment Pipeline",
-      description: "End-to-end CI/CD pipeline deploying React + Go apps to Azure Kubernetes Service using Helm and GitHub Actions.",
-      github: "https://github.com/chidhvilaskacham/aks-deployment"
+      title: "K8s Voting App on AKS",
+      description: "Kubernetes voting app with React frontend, Go backend, and MongoDB, deployed on Azure Kubernetes Service (AKS). ",
+      github: "https://github.com/chidhvilaskacham/k8s-voteapp"
     },
     {
-      title: "Spacelift Blend",
-      description: "GitOps setup using Terraform and Spacelift to manage infrastructure with automated policy checks.",
-      github: "https://github.com/chidhvilaskacham/spacelift_blend"
+      title: "AWS EKS Fargate Deployment",
+      description: "Deploy the classic 2048 game on AWS EKS using AWS Fargate and ALB in a serverless Kubernetes environment.",
+      github: "https://github.com/chidhvilaskacham/EKS_2048_game"
     },
     {
-      title: "Portfolio Website",
-      description: "HTML/CSS-based static site hosted on GitHub Pages.",
-      github: "https://github.com/chidhvilaskacham/chidhvilaskacham.github.io"
+      title: "Automated CI/CD Pipeline",
+      description: "Complete CI/CD pipeline for Java apps using Jenkins, SonarQube, Docker, and Argo CD with GitOps on Kubernetes.",
+      github: "https://github.com/chidhvilaskacham/ultimate-cicd"
     },
     {
-      title: "DevOps Job Tracker",
-      description: "A simple full-stack app to track DevOps job applications using React, Node.js, and MongoDB.",
-      github: "https://github.com/chidhvilaskacham/devops-job-tracker"
+      title: "DevSecOps Pipeline for Tic Tac Toe Game",
+      description: "Secure DevSecOps pipeline with GitHub Actions for a Tic Tac Toe React app with score tracking and game history.",
+      github: "https://github.com/chidhvilaskacham/devsecops-pipeline"
     },
     {
-      title: "Dockerized Flask App",
-      description: "A Flask-based REST API containerized with Docker, ready for deployment on Kubernetes.",
-      github: "https://github.com/chidhvilaskacham/flask-docker"
+      title: "LLM-based Dockerfile Generator",
+      description: "A GenAI-powered tool that generates optimized Dockerfiles for programming languages using local & hosted LLMs via Ollama.",
+      github: "https://github.com/chidhvilaskacham/LLMs"
     },
     {
-      title: "Terraform Azure Setup",
-      description: "Automated provisioning of Azure resources using Terraform modules for scalable deployments.",
-      github: "https://github.com/chidhvilaskacham/terraform-azure"
+      title: "CrewAI DevOps Research and Reporting",
+      description: "Multi-agent AI system using CrewAI and local LLaMA 3.1 via Ollama to automate DevOps research and reporting through collaborative agents.",
+      github: "https://github.com/chidhvilaskacham/crewai-ollama"
     },
-    {
-      title: "CI/CD with GitHub Actions",
-      description: "Sample project demonstrating build/test/deploy workflows with GitHub Actions and Docker.",
-      github: "https://github.com/chidhvilaskacham/ci-cd-actions"
-    }
   ];
 
   const skills = [
@@ -77,7 +72,7 @@ const Index = () => {
     const email = formData.get('email');
     const message = formData.get('message');
     
-    const mailtoLink = `mailto:chidhvilas@example.com?subject=Contact from ${name}&body=${message}%0D%0A%0D%0AFrom: ${email}`;
+    const mailtoLink = `mailto:kachamchidhvilas@gmail.com?subject=Contact from ${name}&body=${message}%0D%0A%0D%0AFrom: ${email}`;
     window.location.href = mailtoLink;
   };
 
@@ -184,8 +179,8 @@ const Index = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-xl text-slate-800">DevOps Intern</CardTitle>
-                <p className="text-blue-600 font-semibold">Rakirs Systems LLC</p>
-                <p className="text-slate-600">May 2025</p>
+                <p className="text-blue-600 font-semibold">Nth Line Solutions LLC</p>
+                <p className="text-slate-600">Jan 2024 – May 2025</p>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-700">
