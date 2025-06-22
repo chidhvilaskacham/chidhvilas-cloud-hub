@@ -4,7 +4,7 @@ import path from 'path'
 import { componentTagger } from 'lovable-tagger'
 
 export default defineConfig({
-  base: '/chidhvilas-cloud-hub/', // Required for GitHub Pages
+  base: '/chidhvilas-cloud-hub/',  // Must match your repository name exactly
   server: {
     host: '::',
     port: 8080,
