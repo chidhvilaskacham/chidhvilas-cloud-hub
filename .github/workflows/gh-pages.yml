@@ -14,6 +14,7 @@ jobs:
           node-version: '20'
       - run: npm ci # or bun install
       - run: npm run build # or bun run build
+      - run: ls -l dist # Debug: show files built
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
