@@ -6,39 +6,46 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import Navigation from '@/components/Navigation';
+import MobileNavigation from '@/components/MobileNavigation';
 
 const Index = () => {
   const projects = [
     {
-      title: "K8s Voting App on AKS",
-      description: "Kubernetes voting app with React frontend, Go backend, and MongoDB, deployed on Azure Kubernetes Service (AKS). ",
-      github: "https://github.com/chidhvilaskacham/k8s-voteapp"
+      title: "AKS Deployment Pipeline",
+      description: "End-to-end CI/CD pipeline deploying React + Go apps to Azure Kubernetes Service using Helm and GitHub Actions.",
+      github: "https://github.com/chidhvilaskacham/aks-deployment"
     },
     {
-      title: "AWS EKS Fargate Deployment",
-      description: "Deploy the classic 2048 game on AWS EKS using AWS Fargate and ALB in a serverless Kubernetes environment.",
-      github: "https://github.com/chidhvilaskacham/EKS_2048_game"
+      title: "Spacelift Blend",
+      description: "GitOps setup using Terraform and Spacelift to manage infrastructure with automated policy checks.",
+      github: "https://github.com/chidhvilaskacham/spacelift_blend"
     },
     {
-      title: "Automated CI/CD Pipeline",
-      description: "Complete CI/CD pipeline for Java apps using Jenkins, SonarQube, Docker, and Argo CD with GitOps on Kubernetes.",
-      github: "https://github.com/chidhvilaskacham/ultimate-cicd"
+      title: "Portfolio Website",
+      description: "HTML/CSS-based static site hosted on GitHub Pages.",
+      github: "https://github.com/chidhvilaskacham/chidhvilaskacham.github.io"
     },
     {
-      title: "DevSecOps Pipeline for Tic Tac Toe Game",
-      description: "Secure DevSecOps pipeline with GitHub Actions for a Tic Tac Toe React app with score tracking and game history.",
-      github: "https://github.com/chidhvilaskacham/devsecops-pipeline"
+      title: "DevOps Job Tracker",
+      description: "A simple full-stack app to track DevOps job applications using React, Node.js, and MongoDB.",
+      github: "https://github.com/chidhvilaskacham/devops-job-tracker"
     },
     {
-      title: "LLM-based Dockerfile Generator",
-      description: "A GenAI-powered tool that generates optimized Dockerfiles for programming languages using local & hosted LLMs via Ollama.",
-      github: "https://github.com/chidhvilaskacham/LLMs"
+      title: "Dockerized Flask App",
+      description: "A Flask-based REST API containerized with Docker, ready for deployment on Kubernetes.",
+      github: "https://github.com/chidhvilaskacham/flask-docker"
     },
     {
-      title: "CrewAI DevOps Research and Reporting",
-      description: "Multi-agent AI system using CrewAI and local LLaMA 3.1 via Ollama to automate DevOps research and reporting through collaborative agents.",
-      github: "https://github.com/chidhvilaskacham/crewai-ollama"
+      title: "Terraform Azure Setup",
+      description: "Automated provisioning of Azure resources using Terraform modules for scalable deployments.",
+      github: "https://github.com/chidhvilaskacham/terraform-azure"
     },
+    {
+      title: "CI/CD with GitHub Actions",
+      description: "Sample project demonstrating build/test/deploy workflows with GitHub Actions and Docker.",
+      github: "https://github.com/chidhvilaskacham/ci-cd-actions"
+    }
   ];
 
   const skills = [
@@ -77,32 +84,58 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      {/* DevOps/Cloud Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-20 h-20 border-2 border-blue-400 rounded-lg rotate-12"></div>
+        <div className="absolute top-32 right-20 w-16 h-16 border-2 border-green-400 rounded-full"></div>
+        <div className="absolute bottom-40 left-20 w-24 h-24 border-2 border-purple-400 rounded-lg -rotate-12"></div>
+        <div className="absolute bottom-20 right-40 w-12 h-12 border-2 border-yellow-400 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/4 w-8 h-8 bg-blue-500 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-6 h-6 bg-green-500 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-10 h-10 bg-purple-500 rounded-full animate-pulse delay-2000"></div>
+      </div>
+
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="w-full h-full" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
       {/* Header Section */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
+      <header className="bg-white/10 backdrop-blur-sm border-b border-white/20 sticky top-0 z-10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-slate-800">Chidhvilas Kacham</h1>
-            <Button 
-              asChild 
-              className="bg-blue-600 hover:bg-blue-700 text-white"
-            >
-              <a 
-                href="https://github.com/chidhvilaskacham/resume/blob/main/Chidhvilas_Kacham_Resume.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
+            <h1 className="text-2xl font-bold text-white">Chidhvilas Kacham</h1>
+            <div className="flex items-center gap-6">
+              <Navigation />
+              <MobileNavigation />
+              <Button 
+                asChild 
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
-                <Download size={16} />
-                Download Resume
-              </a>
-            </Button>
+                <a 
+                  href="https://github.com/chidhvilaskacham/resume/blob/main/Chidhvilas_Kacham_Resume.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Download size={16} />
+                  Download Resume
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-6">
+      <section id="home" className="py-20 px-6 relative">
         <div className="container mx-auto text-center">
           <div className="mb-8">
             <img 
@@ -110,13 +143,13 @@ const Index = () => {
               alt="Chidhvilas Kacham"
               className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover"
             />
-            <h1 className="text-5xl font-bold text-slate-800 mb-4">
+            <h1 className="text-5xl font-bold text-white mb-4">
               DevOps & Cloud Engineer
             </h1>
-            <p className="text-xl text-slate-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-100 mb-6 max-w-2xl mx-auto">
               Master's in Computer Science | Specializing in Kubernetes, Terraform, Docker, Azure, AWS, CI/CD
             </p>
-            <div className="flex justify-center gap-4 text-slate-600">
+            <div className="flex justify-center gap-4 text-blue-100">
               <div className="flex items-center gap-2">
                 <Server size={20} />
                 <span>Infrastructure Automation</span>
@@ -135,15 +168,15 @@ const Index = () => {
       </section>
 
       {/* About Me Section */}
-      <section className="py-16 px-6 bg-white/50">
+      <section id="about" className="py-16 px-6 bg-white/10 backdrop-blur-sm">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">About Me</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">About Me</h2>
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-white/80 backdrop-blur-sm border-slate-200">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
               <CardContent className="p-8">
                 <div className="flex items-start gap-4">
-                  <User className="text-blue-600 mt-1" size={24} />
-                  <p className="text-lg text-slate-700 leading-relaxed">
+                  <User className="text-blue-400 mt-1" size={24} />
+                  <p className="text-lg text-blue-100 leading-relaxed">
                     Passionate about automating infrastructure and enabling smooth deployments. 
                     I build secure, scalable systems with cloud-native practices and modern tooling. 
                     With a strong foundation in both DevOps practices and full-stack development, 
@@ -160,30 +193,30 @@ const Index = () => {
       {/* Experience Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-slate-800 mb-12 text-center">Experience</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Experience</h2>
           <div className="max-w-4xl mx-auto space-y-6">
-            <Card className="bg-white/80 backdrop-blur-sm border-slate-200 hover:shadow-lg transition-shadow">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-lg transition-shadow text-white">
               <CardHeader>
-                <CardTitle className="text-xl text-slate-800">DevOps Engineer</CardTitle>
-                <p className="text-blue-600 font-semibold">Shrive Solutions LLC</p>
-                <p className="text-slate-600">May 2025 – Present</p>
+                <CardTitle className="text-xl text-white">DevOps Engineer</CardTitle>
+                <p className="text-blue-400 font-semibold">Shrive Solutions LLC</p>
+                <p className="text-blue-200">May 2025 – Present</p>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-700">
+                <p className="text-blue-100">
                   Built and managed AKS-based infrastructure, automated deployments using Helm and GitHub Actions, 
                   implemented observability solutions for monitoring and alerting.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/80 backdrop-blur-sm border-slate-200 hover:shadow-lg transition-shadow">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-lg transition-shadow text-white">
               <CardHeader>
-                <CardTitle className="text-xl text-slate-800">DevOps Intern</CardTitle>
-                <p className="text-blue-600 font-semibold">Nth Line Solutions LLC</p>
-                <p className="text-slate-600">Jan 2024 – May 2025</p>
+                <CardTitle className="text-xl text-white">DevOps Intern</CardTitle>
+                <p className="text-blue-400 font-semibold">Rakirs Systems LLC</p>
+                <p className="text-blue-200">May 2025</p>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-700">
+                <p className="text-blue-100">
                   Contributed to Terraform and Ansible automation in a CI/CD setup, 
                   gained hands-on experience with infrastructure as code practices.
                 </p>
@@ -194,16 +227,16 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 px-6 bg-white/50">
+      <section className="py-16 px-6 bg-white/10 backdrop-blur-sm">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-slate-800 mb-12 text-center">Skills</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Skills</h2>
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center">
               {skills.map((skill, index) => (
                 <Badge 
                   key={index} 
                   variant="secondary" 
-                  className="px-4 py-2 text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors"
+                  className="px-4 py-2 text-sm bg-blue-500/20 text-blue-200 hover:bg-blue-500/30 transition-colors border-blue-400/20"
                 >
                   {skill}
                 </Badge>
@@ -214,26 +247,26 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-16 px-6">
+      <section id="projects" className="py-16 px-6">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-slate-800 mb-12 text-center">Projects</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {projects.map((project, index) => (
               <Card 
                 key={index}
-                className="bg-white/80 backdrop-blur-sm border-slate-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group"
+                className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group text-white"
                 onClick={() => window.open(project.github, '_blank')}
               >
                 <CardHeader>
-                  <CardTitle className="text-lg text-slate-800 group-hover:text-blue-600 transition-colors">
+                  <CardTitle className="text-lg text-white group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-blue-200 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {project.description}
                   </p>
-                  <div className="flex items-center gap-2 text-blue-600">
+                  <div className="flex items-center gap-2 text-blue-400">
                     <Github size={16} />
                     <span className="text-sm">View on GitHub</span>
                   </div>
@@ -245,18 +278,18 @@ const Index = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="py-16 px-6 bg-white/50">
+      <section id="blog" className="py-16 px-6 bg-white/10 backdrop-blur-sm">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-slate-800 mb-12 text-center">Latest Blog Posts</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Latest Blog Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {blogPosts.map((post, index) => (
-              <Card key={index} className="bg-white/80 backdrop-blur-sm border-slate-200 hover:shadow-lg transition-shadow cursor-pointer">
+              <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-lg transition-shadow cursor-pointer text-white">
                 <CardHeader>
-                  <CardTitle className="text-lg text-slate-800">{post.title}</CardTitle>
-                  <p className="text-sm text-slate-500">{post.date}</p>
+                  <CardTitle className="text-lg text-white">{post.title}</CardTitle>
+                  <p className="text-sm text-blue-300">{post.date}</p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 text-sm">{post.excerpt}</p>
+                  <p className="text-blue-200 text-sm">{post.excerpt}</p>
                 </CardContent>
               </Card>
             ))}
@@ -265,15 +298,15 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-6">
+      <section id="contact" className="py-16 px-6">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-slate-800 mb-12 text-center">Contact Me</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Contact Me</h2>
           <div className="max-w-2xl mx-auto">
-            <Card className="bg-white/80 backdrop-blur-sm border-slate-200">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
               <CardContent className="p-8">
                 <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-blue-200 mb-2">
                       Name
                     </label>
                     <Input 
@@ -281,12 +314,12 @@ const Index = () => {
                       name="name" 
                       type="text" 
                       required 
-                      className="w-full"
+                      className="w-full bg-white/10 border-white/20 text-white placeholder:text-blue-300"
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-blue-200 mb-2">
                       Email
                     </label>
                     <Input 
@@ -294,19 +327,19 @@ const Index = () => {
                       name="email" 
                       type="email" 
                       required 
-                      className="w-full"
+                      className="w-full bg-white/10 border-white/20 text-white placeholder:text-blue-300"
                       placeholder="your.email@example.com"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-blue-200 mb-2">
                       Message
                     </label>
                     <Textarea 
                       id="message" 
                       name="message" 
                       required 
-                      className="w-full min-h-[120px]"
+                      className="w-full min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-blue-300"
                       placeholder="Tell me about your project or opportunity..."
                     />
                   </div>
@@ -325,9 +358,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-800 text-white py-8 px-6">
+      <footer className="bg-black/20 text-white py-8 px-6">
         <div className="container mx-auto text-center">
-          <p className="text-slate-300">
+          <p className="text-blue-200">
             © 2024 Chidhvilas Kacham. Built with React and Tailwind CSS.
           </p>
         </div>
