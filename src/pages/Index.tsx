@@ -500,17 +500,63 @@ const Index = () => {
                 DevOps & Cloud Engineer passionate about building scalable, secure infrastructure.
               </p>
               <div className="flex gap-4">
-                <Button variant="outline" size="icon" className="bg-white/10 border-white/20 hover:bg-white/20">
-                  <Github size={20} />
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="bg-white/10 border-white/20 hover:bg-white/20"
+                  asChild
+                >
+                  <a 
+                    href="https://github.com/chidhvilaskacham" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="GitHub Profile"
+                  >
+                    <Github size={20} />
+                  </a>
                 </Button>
-                <Button variant="outline" size="icon" className="bg-white/10 border-white/20 hover:bg-white/20">
-                  <Linkedin size={20} />
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="bg-white/10 border-white/20 hover:bg-white/20"
+                  asChild
+                >
+                  <a 
+                    href="https://linkedin.com/in/chidhvilas-kacham" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn Profile"
+                  >
+                    <Linkedin size={20} />
+                  </a>
                 </Button>
-                <Button variant="outline" size="icon" className="bg-white/10 border-white/20 hover:bg-white/20">
-                  <Twitter size={20} />
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="bg-white/10 border-white/20 hover:bg-white/20"
+                  asChild
+                >
+                  <a 
+                    href="https://twitter.com/chidhvilas" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="Twitter Profile"
+                  >
+                    <Twitter size={20} />
+                  </a>
                 </Button>
-                <Button variant="outline" size="icon" className="bg-white/10 border-white/20 hover:bg-white/20">
-                  <Mail size={20} />
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="bg-white/10 border-white/20 hover:bg-white/20"
+                  asChild
+                >
+                  <a 
+                    href="mailto:kachamchidhvilas@gmail.com"
+                    aria-label="Send Email"
+                  >
+                    <Mail size={20} />
+                  </a>
                 </Button>
               </div>
             </div>
