@@ -1,11 +1,12 @@
 
 import React from 'react';
-import { Download, Github, Mail, User, Code, Server, Cloud } from 'lucide-react';
+import { Download, Github, Mail, User, Code, Server, Cloud, Award, Trophy, Linkedin, Twitter, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Separator } from '@/components/ui/separator';
 import Navigation from '@/components/Navigation';
 import MobileNavigation from '@/components/MobileNavigation';
 
@@ -48,27 +49,89 @@ const Index = () => {
     }
   ];
 
-  const skills = [
-    "Kubernetes", "Docker", "Terraform", "Helm", "Azure", "AWS", 
-    "GitHub Actions", "Jenkins", "Python", "Golang", "React", 
-    "SQL", "Prometheus", "Grafana", "Ansible", "GitOps"
+  const techStack = {
+    "Cloud Platforms": ["Azure", "AWS", "Google Cloud"],
+    "Container & Orchestration": ["Docker", "Kubernetes", "Helm"],
+    "Infrastructure as Code": ["Terraform", "Ansible", "ARM Templates"],
+    "CI/CD & DevOps": ["GitHub Actions", "Jenkins", "GitLab CI", "Azure DevOps"],
+    "Programming": ["Python", "Go", "JavaScript", "TypeScript"],
+    "Monitoring & Observability": ["Prometheus", "Grafana", "ELK Stack", "Azure Monitor"],
+    "Databases": ["PostgreSQL", "MongoDB", "Redis"],
+    "Version Control": ["Git", "GitHub", "GitLab"]
+  };
+
+  const certifications = [
+    {
+      name: "Azure Solutions Architect Expert",
+      icon: "☁️",
+      color: "bg-blue-500/20 text-blue-300"
+    },
+    {
+      name: "AWS Solutions Architect",
+      icon: "🔶",
+      color: "bg-orange-500/20 text-orange-300"
+    },
+    {
+      name: "Certified Kubernetes Administrator (CKA)",
+      icon: "⚙️",
+      color: "bg-purple-500/20 text-purple-300"
+    },
+    {
+      name: "HashiCorp Terraform Associate",
+      icon: "🏗️",
+      color: "bg-green-500/20 text-green-300"
+    }
+  ];
+
+  const keyHighlights = [
+    "Led migration of legacy applications to cloud-native architecture, reducing infrastructure costs by 40%",
+    "Implemented automated CI/CD pipelines that decreased deployment time from hours to minutes",
+    "Designed and deployed scalable Kubernetes clusters serving 100k+ daily active users",
+    "Architected multi-region disaster recovery solutions with 99.9% uptime SLA",
+    "Mentored junior developers in DevOps best practices and cloud technologies"
+  ];
+
+  const achievements = [
+    {
+      metric: "50+",
+      description: "Successful Production Deployments",
+      icon: "🚀"
+    },
+    {
+      metric: "99.9%",
+      description: "System Uptime Maintained",
+      icon: "⚡"
+    },
+    {
+      metric: "40%",
+      description: "Cost Reduction Through Optimization",
+      icon: "💰"
+    },
+    {
+      metric: "Research Paper",
+      description: "Published on Phishing Attack Detection",
+      icon: "📄"
+    }
   ];
 
   const blogPosts = [
     {
       title: "Kubernetes Best Practices for Production",
       excerpt: "Essential guidelines for running Kubernetes clusters in production environments...",
-      date: "March 15, 2024"
+      date: "March 15, 2024",
+      url: "#"
     },
     {
       title: "Infrastructure as Code with Terraform",
       excerpt: "How to structure and manage your infrastructure using Terraform modules...",
-      date: "March 8, 2024"
+      date: "March 8, 2024",
+      url: "#"
     },
     {
       title: "GitOps: The Future of DevOps",
       excerpt: "Implementing GitOps practices for automated and reliable deployments...",
-      date: "February 28, 2024"
+      date: "February 28, 2024",
+      url: "#"
     }
   ];
 
@@ -140,16 +203,17 @@ const Index = () => {
           <div className="mb-8">
             <img 
               src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop&crop=face"
-              alt="Chidhvilas Kacham"
+              alt="Chidhvilas Kacham - DevOps & Cloud Engineer"
               className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover"
+              loading="eager"
             />
-            <h1 className="text-5xl font-bold text-white mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
               DevOps & Cloud Engineer
             </h1>
-            <p className="text-xl text-blue-100 mb-6 max-w-2xl mx-auto">
-              Master's in Computer Science | Specializing in Kubernetes, Terraform, Docker, Azure, AWS, CI/CD
+            <p className="text-xl md:text-2xl text-blue-100 mb-6 max-w-3xl mx-auto">
+              Transforming infrastructure with cloud-native solutions, automation, and scalable architectures
             </p>
-            <div className="flex justify-center gap-4 text-blue-100">
+            <div className="flex flex-wrap justify-center gap-6 text-blue-100">
               <div className="flex items-center gap-2">
                 <Server size={20} />
                 <span>Infrastructure Automation</span>
@@ -163,6 +227,93 @@ const Index = () => {
                 <span>Full-Stack Development</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-16 px-6 bg-white/5 backdrop-blur-sm">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:scale-105 transition-transform">
+                <CardContent className="p-6 text-center">
+                  <div className={`w-16 h-16 rounded-full ${cert.color} flex items-center justify-center text-2xl mx-auto mb-4`}>
+                    {cert.icon}
+                  </div>
+                  <h3 className="font-semibold text-sm">{cert.name}</h3>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Highlights Section */}
+      <section className="py-16 px-6">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Key Highlights</h2>
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
+              <CardContent className="p-8">
+                <ul className="space-y-4">
+                  {keyHighlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <Trophy className="text-yellow-400 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-blue-100">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="py-16 px-6 bg-white/5 backdrop-blur-sm">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Tech Stack</h2>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.entries(techStack).map(([category, tools], index) => (
+              <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
+                <CardHeader>
+                  <CardTitle className="text-lg text-blue-300">{category}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {tools.map((tool, toolIndex) => (
+                      <Badge 
+                        key={toolIndex} 
+                        variant="secondary" 
+                        className="bg-blue-500/20 text-blue-200 hover:bg-blue-500/30 transition-colors border-blue-400/20"
+                      >
+                        {tool}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section className="py-16 px-6">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Achievements</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {achievements.map((achievement, index) => (
+              <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 text-white text-center hover:scale-105 transition-transform">
+                <CardContent className="p-6">
+                  <div className="text-3xl mb-2">{achievement.icon}</div>
+                  <div className="text-2xl font-bold text-blue-300 mb-2">{achievement.metric}</div>
+                  <p className="text-sm text-blue-200">{achievement.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -226,28 +377,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-16 px-6 bg-white/10 backdrop-blur-sm">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Skills</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap gap-3 justify-center">
-              {skills.map((skill, index) => (
-                <Badge 
-                  key={index} 
-                  variant="secondary" 
-                  className="px-4 py-2 text-sm bg-blue-500/20 text-blue-200 hover:bg-blue-500/30 transition-colors border-blue-400/20"
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-6">
+      <section id="projects" className="py-16 px-6 bg-white/5 backdrop-blur-sm">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -263,7 +394,7 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-blue-200 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-blue-200 text-sm mb-4">
                     {project.description}
                   </p>
                   <div className="flex items-center gap-2 text-blue-400">
@@ -278,14 +409,21 @@ const Index = () => {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-16 px-6 bg-white/10 backdrop-blur-sm">
+      <section id="blog" className="py-16 px-6">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Latest Blog Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {blogPosts.map((post, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-lg transition-shadow cursor-pointer text-white">
+              <Card 
+                key={index} 
+                className="bg-white/10 backdrop-blur-sm border-white/20 hover:shadow-lg transition-shadow cursor-pointer text-white group"
+                onClick={() => window.open(post.url, '_blank')}
+              >
                 <CardHeader>
-                  <CardTitle className="text-lg text-white">{post.title}</CardTitle>
+                  <CardTitle className="text-lg text-white group-hover:text-blue-400 transition-colors flex items-center gap-2">
+                    {post.title}
+                    <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </CardTitle>
                   <p className="text-sm text-blue-300">{post.date}</p>
                 </CardHeader>
                 <CardContent>
@@ -298,7 +436,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-6">
+      <section id="contact" className="py-16 px-6 bg-white/5 backdrop-blur-sm">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Contact Me</h2>
           <div className="max-w-2xl mx-auto">
@@ -358,11 +496,90 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black/20 text-white py-8 px-6">
-        <div className="container mx-auto text-center">
-          <p className="text-blue-200">
-            © 2024 Chidhvilas Kacham. Built with React and Tailwind CSS.
-          </p>
+      <footer className="bg-black/30 text-white py-12 px-6">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">Chidhvilas Kacham</h3>
+              <p className="text-blue-200 mb-4">
+                DevOps & Cloud Engineer passionate about building scalable, secure infrastructure.
+              </p>
+              <div className="flex gap-4">
+                <Button variant="outline" size="icon" className="bg-white/10 border-white/20 hover:bg-white/20">
+                  <Github size={20} />
+                </Button>
+                <Button variant="outline" size="icon" className="bg-white/10 border-white/20 hover:bg-white/20">
+                  <Linkedin size={20} />
+                </Button>
+                <Button variant="outline" size="icon" className="bg-white/10 border-white/20 hover:bg-white/20">
+                  <Twitter size={20} />
+                </Button>
+                <Button variant="outline" size="icon" className="bg-white/10 border-white/20 hover:bg-white/20">
+                  <Mail size={20} />
+                </Button>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-bold mb-4">Recent Articles</h3>
+              <ul className="space-y-2">
+                {blogPosts.slice(0, 3).map((post, index) => (
+                  <li key={index}>
+                    <a 
+                      href={post.url} 
+                      className="text-blue-200 hover:text-blue-400 transition-colors text-sm block"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {post.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a 
+                    href="https://github.com/chidhvilaskacham/resume/blob/main/Chidhvilas_Kacham_Resume.pdf"
+                    className="text-blue-200 hover:text-blue-400 transition-colors text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download Resume
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://github.com/chidhvilaskacham"
+                    className="text-blue-200 hover:text-blue-400 transition-colors text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub Profile
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="mailto:kachamchidhvilas@gmail.com"
+                    className="text-blue-200 hover:text-blue-400 transition-colors text-sm"
+                  >
+                    Email Me
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <Separator className="bg-white/20 mb-6" />
+          
+          <div className="text-center">
+            <p className="text-blue-200">
+              © 2024 Chidhvilas Kacham. Built with React, TypeScript, and Tailwind CSS. Deployed on GitHub Pages.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
