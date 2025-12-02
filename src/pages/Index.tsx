@@ -113,20 +113,17 @@ const Index = () => {
     {
       title: "Kubernetes Best Practices for Production",
       excerpt: "Essential guidelines for running Kubernetes clusters in production environments...",
-      date: "March 15, 2024",
-      url: "#"
+      url: "https://medium.com/@kachamchidhvilas/level-up-your-k8s-game-production-best-practices-you-cant-ignore-107edeb47cdc"
     },
     {
       title: "Infrastructure as Code with Terraform",
       excerpt: "How to structure and manage your infrastructure using Terraform modules...",
-      date: "March 8, 2024",
       url: "#"
     },
     {
       title: "GitOps: The Future of DevOps",
       excerpt: "Implementing GitOps practices for automated and reliable deployments...",
-      date: "February 28, 2024",
-      url: "#"
+      url: "https://medium.com/@kachamchidhvilas/gitops-the-devops-supercharger-you-didnt-know-you-needed-but-definitely-do-49735bc64425"
     }
   ];
 
@@ -419,7 +416,6 @@ const Index = () => {
                     {post.title}
                     <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </CardTitle>
-                  <p className="text-sm text-blue-300">{post.date}</p>
                 </CardHeader>
                 <CardContent>
                   <p className="text-blue-200 text-sm">{post.excerpt}</p>
