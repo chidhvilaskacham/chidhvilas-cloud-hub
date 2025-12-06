@@ -175,7 +175,7 @@ const Index = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white"
               >
                 <a 
-                  href="https://github.com/chidhvilaskacham/resume/blob/main/Chidhvilas_Kacham_Resume.pdf" 
+                  href="https://github.com/chidhvilaskacham/chidhvilas-cloud-hub/raw/main/assets/Chidhvilas_Kacham_DevOps_Resume.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
@@ -194,7 +194,7 @@ const Index = () => {
         <div className="container mx-auto text-center">
           <div className="mb-8">
             <img 
-              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop&crop=face"
+              src="https://github.com/chidhvilaskacham/chidhvilas-cloud-hub/raw/main/assets/IMG_0176.JPG?w=300&h=300&fit=crop&crop=face"
               alt="Chidhvilas Kacham - DevOps & Cloud Engineer"
               className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover"
               loading="eager"
