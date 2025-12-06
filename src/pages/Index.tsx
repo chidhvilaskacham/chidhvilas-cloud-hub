@@ -118,7 +118,7 @@ const Index = () => {
     {
       title: "Infrastructure as Code with Terraform",
       excerpt: "How to structure and manage your infrastructure using Terraform modules...",
-      url: "#"
+      url: "https://medium.com/@kachamchidhvilas/infrastructure-as-code-with-terraform-building-your-cloud-kingdom-with-code-97039c4e6344"
     },
     {
       title: "GitOps: The Future of DevOps",
